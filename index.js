@@ -1,3 +1,4 @@
+const config = require('config');
 const Joi = require('joi');
 const helmet = require('helmet');
 const morgan = require('morgan');
@@ -11,6 +12,10 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.static('public'));
 
 app.use(helmet());
+
+console.log(`Application name: ${config.get('name')}`);
+console.log(`Mail server: ${config.get('mail.host')}`);
+console.log(`Mail password: ${config.get('mail.password')}`);
 
 if (app.get('env') === 'development') {
     app.use(morgan('tiny'));
