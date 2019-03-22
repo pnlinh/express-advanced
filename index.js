@@ -20,9 +20,9 @@ app.use(helmet());
 app.use('/', home);
 app.use('/api/courses', courses);
 
-console.log(`Application name: ${config.get('name')}`);
-console.log(`Mail server: ${config.get('mail.host')}`);
-console.log(`Mail password: ${config.get('mail.password')}`);
+// console.log(`Application name: ${config.get('name')}`);
+// console.log(`Mail server: ${config.get('mail.host')}`);
+// console.log(`Mail password: ${config.get('mail.password')}`);
 
 if (app.get('env') === 'development') {
     app.use(morgan('tiny'));
